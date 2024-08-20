@@ -7,7 +7,7 @@
     }
     @if (!loading) {
         <tr>
-            <th class="align-left">Country</th>
+            <th class="align-left desktop">Country</th>
             <th class="align-left">Flag</th>
             <th class="align-right desktop">Gold</th>
             <th class="align-right desktop">Silver</th>
@@ -18,7 +18,7 @@
         </tr>
         @for (country of countryTotals; track country) {
             <tr>
-                <td>{{country.countryCode}}</td>
+                <td class="align-left desktop">{{country.countryCode}}</td>
                 <td><img [src]="country.flagURL" [alt]="country.countryCode" class="flag-64" /></td>
                 <td class="align-right desktop">{{country.gold}}</td>
                 <td class="align-right desktop">{{country.silver}}</td>
@@ -36,7 +36,9 @@
                 </td>
             </tr>
             @if (country.expand) {
-                <app-country-medals />
+                <tr>
+                    <td colspan="9"><app-country-medals [country]="country.countryCode" /></td>
+                </tr>
             }
         }
     }

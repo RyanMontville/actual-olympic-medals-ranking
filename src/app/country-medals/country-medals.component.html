@@ -1,1 +1,10 @@
-<p>country-medals works!</p>
+<table>
+    @for (medal of medalsForCountry; track medal) {
+        <tr>
+            <td>{{medal.medalDate}}</td>
+            <td>{{medal.medalistName}}</td>
+            <td>{{medal.sport}} - {{medal.event}}</td>
+            <td class="align-center">{{medal.medalCode}}{{medal.numAthletes}}</td>
+        </tr>
+    }
+</table>
