@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class CsvService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  getActualTotals() {
+    return this.http.get(`https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/actual_totals.csv`, {responseType: 'text'});
+}
 }
