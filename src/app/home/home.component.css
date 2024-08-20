@@ -28,6 +28,13 @@ th {
     text-align: right;
 }
 
+.expand {
+    background-color: var(--table-backgroud);
+    color: var(--body-color);
+    border: 1px solid var(--body-color);
+    cursor: pointer;
+}
+
 tr:not(:last-child) {
     border-bottom: 1px solid #E3E3E3;
 }

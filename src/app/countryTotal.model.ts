@@ -7,6 +7,7 @@ export class CountryTotals {
         public bronze: number,
         public total: number,
         public originalRank: number,
-        public actualRank: number
+        public actualRank: number,
+        public expand: boolean
     ) {}
 }

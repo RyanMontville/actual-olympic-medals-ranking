@@ -26,7 +26,18 @@
                 <td class="align-right">{{country.total}}</td>
                 <td class="align-right">{{country.originalRank}}</td>
                 <td class="align-right">{{country.actualRank}}</td>
+                <td>
+                    @if (!country.expand) {
+                        <button class="material-symbols-outlined expand" (click)="country.expand = true">add</button>
+                    }
+                    @if (country.expand) {
+                        <button class="material-symbols-outlined expand" (click)="country.expand = false">remove</button>
+                    }
+                </td>
             </tr>
+            @if (country.expand) {
+                <app-country-medals />
+            }
         }
     }
 </table>
