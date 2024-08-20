@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit{
       const list = data.split('\n');
       list.forEach(line => {
         let cols = line.split(',');
-        let total = new CountryTotals(cols[0], cols[1], +cols[2], +cols[3], +cols[4], +cols[5]);
+        let total = new CountryTotals(cols[0], cols[1], +cols[2], +cols[3], +cols[4], +cols[5], +cols[6], +cols[7]);
         if (total.countryCode.length > 0) {
           this.countryTotals.push(total);
         }

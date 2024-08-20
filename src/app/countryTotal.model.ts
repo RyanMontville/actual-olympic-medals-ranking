@@ -5,6 +5,8 @@ export class CountryTotals {
         public gold: number,
         public silver: number,
         public bronze: number,
-        public total: number
+        public total: number,
+        public originalRank: number,
+        public actualRank: number
     ) {}
 }

@@ -28,3 +28,9 @@ th {
 tr:not(:last-child) {
     border-bottom: 1px solid #E3E3E3;
 }
+
+@media only screen and (max-width: 650px) {
+    .desktop {
+        display: none;
+    }
+}

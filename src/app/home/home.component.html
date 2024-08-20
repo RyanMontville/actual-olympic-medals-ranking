@@ -5,19 +5,23 @@
     <tr>
         <th class="align-left">Country</th>
         <th class="align-left">Flag</th>
-        <th class="align-right">Gold</th>
-        <th class="align-right">Silver</th>
-        <th class="align-right">Bronze</th>
+        <th class="align-right desktop">Gold</th>
+        <th class="align-right desktop">Silver</th>
+        <th class="align-right desktop">Bronze</th>
         <th class="align-right">Total</th>
+        <th class="align-right">Original Rank</th>
+        <th class="align-right">Actual Rank</th>
     </tr>
     @for (country of countryTotals; track country) {
         <tr>
             <td>{{country.countryCode}}</td>
             <td><img [src]="country.flagURL" [alt]="country.countryCode" class="flag-64" /></td>
-            <td class="align-right">{{country.gold}}</td>
-            <td class="align-right">{{country.silver}}</td>
-            <td class="align-right">{{country.bronze}}</td>
+            <td class="align-right desktop">{{country.gold}}</td>
+            <td class="align-right desktop">{{country.silver}}</td>
+            <td class="align-right desktop">{{country.bronze}}</td>
             <td class="align-right">{{country.total}}</td>
+            <td class="align-right">{{country.originalRank}}</td>
+            <td class="align-right">{{country.actualRank}}</td>
         </tr>
     }
 </table>
