@@ -41,7 +41,12 @@ body {
     color: var(--body-color);
     font-family: "Roboto Slab", serif;;
 }
-
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Arial Black', sans-serif;
+}
 main {
     max-width: 900px;
     margin: 10px auto;

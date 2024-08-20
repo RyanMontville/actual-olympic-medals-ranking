@@ -2,27 +2,32 @@
 <main>
 <p>Sanjay Amirthraj created a website to ranked all of the countries not by the total number of medals, but by the total value of the medals. You can check out his website <a href="https://olympics-better-rankings.vercel.app/" target="_blank">here</a>. The Hank green <a href="https://x.com/hankgreen/status/1824509431352266788" target="_blank">retweeted</a> his website. In the comments of Hank's post, several people suggested ranking the countries by total medals earned including athletes on teams, so a relay team of 4 would be counted as 4 medals instead of 1. After spending the weekend finding a dataset that was more than just the total medal counts and building a database, I have created the ACTUAL olympic rankings.</p>
 <table>
-    <tr>
-        <th class="align-left">Country</th>
-        <th class="align-left">Flag</th>
-        <th class="align-right desktop">Gold</th>
-        <th class="align-right desktop">Silver</th>
-        <th class="align-right desktop">Bronze</th>
-        <th class="align-right">Total</th>
-        <th class="align-right">Original Rank</th>
-        <th class="align-right">Actual Rank</th>
-    </tr>
-    @for (country of countryTotals; track country) {
+    @if (loading) {
+        <h2>Loading...</h2>
+    }
+    @if (!loading) {
         <tr>
-            <td>{{country.countryCode}}</td>
-            <td><img [src]="country.flagURL" [alt]="country.countryCode" class="flag-64" /></td>
-            <td class="align-right desktop">{{country.gold}}</td>
-            <td class="align-right desktop">{{country.silver}}</td>
-            <td class="align-right desktop">{{country.bronze}}</td>
-            <td class="align-right">{{country.total}}</td>
-            <td class="align-right">{{country.originalRank}}</td>
-            <td class="align-right">{{country.actualRank}}</td>
+            <th class="align-left">Country</th>
+            <th class="align-left">Flag</th>
+            <th class="align-right desktop">Gold</th>
+            <th class="align-right desktop">Silver</th>
+            <th class="align-right desktop">Bronze</th>
+            <th class="align-right">Total</th>
+            <th class="align-right">Original Rank</th>
+            <th class="align-right">Actual Rank</th>
         </tr>
+        @for (country of countryTotals; track country) {
+            <tr>
+                <td>{{country.countryCode}}</td>
+                <td><img [src]="country.flagURL" [alt]="country.countryCode" class="flag-64" /></td>
+                <td class="align-right desktop">{{country.gold}}</td>
+                <td class="align-right desktop">{{country.silver}}</td>
+                <td class="align-right desktop">{{country.bronze}}</td>
+                <td class="align-right">{{country.total}}</td>
+                <td class="align-right">{{country.originalRank}}</td>
+                <td class="align-right">{{country.actualRank}}</td>
+            </tr>
+        }
     }
 </table>
 

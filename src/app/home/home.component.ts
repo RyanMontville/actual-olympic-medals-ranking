@@ -14,6 +14,7 @@ import { CountryTotals } from '../countryTotal.model';
 export class HomeComponent implements OnInit{
   constructor(private csvService: CsvService) {}
   countryTotals: CountryTotals[] = [];
+  loading: boolean = true;
 
   ngOnInit(): void {
     this.csvService.getActualTotals().subscribe(data => {
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit{
           this.countryTotals.push(total);
         }
       });
+      this.loading = false;
     });
   }
 
