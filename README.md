@@ -17,6 +17,6 @@ You can find a .sql file of the database I created [here](https://raw.githubuser
 * team_medals which has a medal ID, the date the medal was awarded, medal type, medal code, the country ID, the team ID, and the event Id for every medal awarded to a team. I generated the medal ID similarly to how I generated the ID for the individual_medals table. This table only has one medal per team, the total counting each athlete on the team in calculated separately.
 * teams which has the team ID included in the dataset I found, team name, team gender, the country ID, the sport ID, the event ID, the number of athletes on the team, and the number of coaches on the team. I generated the team name by combining the country ISO code, sport code, gender, and event Id.
 
-The Angular app uses to csv files to load the data:
+The Angular app uses 2 csv files to load the data:
 * [actul_totals.csv](https://github.com/RyanMontville/actual-olympic-medals-ranking/blob/main/actual_totals.csv) which has the columns country name, flag url, actual gold total, actual silver total, actual bronze total, actual medal total, original ranking, and actual ranking
 * [allmedals.csv](https://github.com/RyanMontville/actual-olympic-medals-ranking/blob/main/allmedals.csv) which has the columns date awarded, country, athlete name/team name, event, medal code (1-gold, 2-silver, 3-bronze), and the number of athletes to multiply by
