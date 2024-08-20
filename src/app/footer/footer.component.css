@@ -1,0 +1,16 @@
+footer {
+    max-width: 900px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+

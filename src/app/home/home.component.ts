@@ -21,7 +21,9 @@ export class HomeComponent implements OnInit{
       list.forEach(line => {
         let cols = line.split(',');
         let total = new CountryTotals(cols[0], cols[1], +cols[2], +cols[3], +cols[4], +cols[5]);
-        this.countryTotals.push(total);
+        if (total.countryCode.length > 0) {
+          this.countryTotals.push(total);
+        }
       });
     });
   }

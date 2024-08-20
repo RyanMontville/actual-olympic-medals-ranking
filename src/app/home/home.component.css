@@ -1,0 +1,30 @@
+.rings {
+    width: 100%;
+}
+
+table {
+    margin: 10px 0;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 50px;
+    background-color: var(--main-background-color);
+}
+
+td {
+    padding: 0 10px;
+}
+
+th {
+    padding: 10px;
+}
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid #E3E3E3;
+}
