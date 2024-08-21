@@ -5,7 +5,7 @@
 -- Dumped from database version 16.3
 -- Dumped by pg_dump version 16.3
 
--- Started on 2024-08-21 09:29:04
+-- Started on 2024-08-21 13:15:54
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -11655,6 +11655,7 @@ COPY public.athletes (athlete_id, athlete_name, last_name_first, gender, country
 --
 
 COPY public.countries (country_id, country_name, iso_alpha_3, gold, silver, bronze, medal_total, flag_url, original_rank, actual_rank, iso_alpha_2) FROM stdin;
+75	Kosovo	XKX	0	1	1	2	https://flagsapi.com/XK/flat/64.png\n	74	76	XK
 27	Ghana	GHA	0	0	0	0	https://flagsapi.com/GH/flat/64.png\n	\N	\N	GH
 126	Guinea	GIN	0	0	0	0	https://flagsapi.com/GN/flat/64.png\n	\N	\N	GN
 60	Afghanistan	AFG	0	0	0	0	https://flagsapi.com/AF/flat/64.png\n	\N	\N	AF
@@ -11687,67 +11688,66 @@ COPY public.countries (country_id, country_name, iso_alpha_3, gold, silver, bron
 7	Iraq	IRQ	0	0	0	0	https://flagsapi.com/IQ/flat/64.png\n	\N	\N	IQ
 120	British Virgin Islands	VGB	0	0	0	0	https://flagsapi.com/VG/flat/64.png\n	\N	\N	VG
 42	Kiribati	KIR	0	0	0	0	https://flagsapi.com/KI/flat/64.png\n	\N	\N	KI
-75	Kosovo	XKX	0	1	1	2	https://flagsapi.com/XK/flat/64.png\n	74	76	XK
-29	Algeria	DZA	2	0	1	3	https://flagsapi.com/DZ/flat/64.png\n	40	65	DZ
-32	Individual Neutral Athletes	AIN	1	3	1	5	https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/images/AIN.png	47	50	AI
-148	Refugee Olympic Team	EOR	0	0	1	1	https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/images/EOR.png	91	91	EO
+176	Azerbaijan	AZE	2	2	3	7	https://flagsapi.com/AZ/flat/64.png\n	30	33	AZ
+40	Morocco	MAR	1	0	1	2	https://flagsapi.com/MA/flat/64.png\n	61	60	MA
+32	Individual Neutral Athletes	AIN	1	3	1	5	https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/images/AIN.png	47	46	AI
+86	Republic of Moldova	MDA	0	1	3	4	https://flagsapi.com/MD/flat/64.png\n	73	74	MD
 138	Angola	AGO	0	0	0	0	https://flagsapi.com/AO/flat/64.png\n	\N	\N	AO
 195	American Samoa	ASM	0	0	0	0	https://flagsapi.com/AS/flat/64.png\n	\N	\N	AS
-154	Australia	AUS	18	19	16	53	https://flagsapi.com/AU/flat/64.png\n	4	5	AU
-99	Austria	AUT	2	0	3	5	https://flagsapi.com/AT/flat/64.png\n	36	49	AT
-176	Azerbaijan	AZE	2	2	3	7	https://flagsapi.com/AZ/flat/64.png\n	31	46	AZ
+29	Algeria	DZA	2	0	1	3	https://flagsapi.com/DZ/flat/64.png\n	39	40	DZ
+5	Mexico	MEX	0	3	2	5	https://flagsapi.com/MX/flat/64.png\n	66	67	MX
 161	Bahamas	BHS	0	0	0	0	https://flagsapi.com/BS/flat/64.png\n	\N	\N	BS
 145	Burundi	BDI	0	0	0	0	https://flagsapi.com/BI/flat/64.png\n	\N	\N	BI
-149	Belgium	BEL	3	1	6	10	https://flagsapi.com/BE/flat/64.png\n	25	34	BE
+143	China	CHN	40	27	24	91	https://flagsapi.com/CN/flat/64.png\n	2	2	CN
 181	Bosnia & Herzegovina	BIH	0	0	0	0	https://flagsapi.com/BA/flat/64.png\n	\N	\N	BA
-103	Brazil	BRA	3	7	10	20	https://flagsapi.com/BR/flat/64.png\n	20	11	BR
-35	Bahrain	BHR	2	1	1	4	https://flagsapi.com/BH/flat/64.png\n	33	56	BH
+154	Australia	AUS	18	19	16	53	https://flagsapi.com/AU/flat/64.png\n	4	7	AU
+182	Canada	CAN	9	7	11	27	https://flagsapi.com/CA/flat/64.png\n	12	16	CA
 165	Brunei Darussalam	BRN	0	0	0	0	https://flagsapi.com/BN/flat/64.png\n	\N	\N	BN
-82	Bulgaria	BGR	3	1	3	7	https://flagsapi.com/BG/flat/64.png\n	26	45	BG
+103	Brazil	BRA	3	7	10	20	https://flagsapi.com/BR/flat/64.png\n	20	23	BR
 169	Centr Afric Re	CAF	0	0	0	0	https://flagsapi.com/CF/flat/64.png\n	\N	\N	CF
-182	Canada	CAN	9	7	11	27	https://flagsapi.com/CA/flat/64.png\n	12	13	CA
-143	China	CHN	40	27	24	91	https://flagsapi.com/CN/flat/64.png\n	2	3	CN
-36	Cote d'Ivoire	CIV	0	0	1	1	https://flagsapi.com/CI/flat/64.png\n	90	90	CI
+149	Belgium	BEL	3	1	6	10	https://flagsapi.com/BE/flat/64.png\n	25	29	BE
+82	Bulgaria	BGR	3	1	3	7	https://flagsapi.com/BG/flat/64.png\n	26	30	BG
+91	Cyprus	CYP	0	1	0	1	https://flagsapi.com/CY/flat/64.png\n	75	77	CY
 190	Cameroon	CMR	0	0	0	0	https://flagsapi.com/CM/flat/64.png\n	\N	\N	CM
-112	Cabo Verde	CPV	0	0	1	1	https://flagsapi.com/CV/flat/64.png\n	89	89	CV
-91	Cyprus	CYP	0	1	0	1	https://flagsapi.com/CY/flat/64.png\n	77	81	CY
-25	Jordan	JOR	0	1	0	1	https://flagsapi.com/JO/flat/64.png\n	79	82	JO
-40	Morocco	MAR	1	0	1	2	https://flagsapi.com/MA/flat/64.png\n	61	24	MA
-14	Malaysia	MYS	0	0	2	2	https://flagsapi.com/MY/flat/64.png\n	83	70	MY
-86	Republic of Moldova	MDA	0	1	3	4	https://flagsapi.com/MD/flat/64.png\n	73	62	MD
-5	Mexico	MEX	0	3	2	5	https://flagsapi.com/MX/flat/64.png\n	66	42	MX
-114	Mongolia	MNG	0	1	0	1	https://flagsapi.com/MN/flat/64.png\n	78	83	MN
-12	Argentina	ARG	1	1	1	3	https://flagsapi.com/AR/flat/64.png\n	55	25	AR
-184	Botswana	BWA	1	1	0	2	https://flagsapi.com/BW/flat/64.png\n	57	47	BW
+25	Jordan	JOR	0	1	0	1	https://flagsapi.com/JO/flat/64.png\n	75	77	JO
+114	Mongolia	MNG	0	1	0	1	https://flagsapi.com/MN/flat/64.png\n	75	77	MN
+14	Malaysia	MYS	0	0	2	2	https://flagsapi.com/MY/flat/64.png\n	81	81	MY
+148	Refugee Olympic Team	EOR	0	0	1	1	https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/images/EOR.png	85	85	EO
+36	Cote d'Ivoire	CIV	0	0	1	1	https://flagsapi.com/CI/flat/64.png\n	85	85	CI
+112	Cabo Verde	CPV	0	0	1	1	https://flagsapi.com/CV/flat/64.png\n	85	85	CV
+35	Bahrain	BHR	2	1	1	4	https://flagsapi.com/BH/flat/64.png\n	33	36	BH
+99	Austria	AUT	2	0	3	5	https://flagsapi.com/AT/flat/64.png\n	36	32	AT
+47	Croatia	HRV	2	2	3	7	https://flagsapi.com/HR/flat/64.png\n	30	26	HR
+12	Argentina	ARG	1	1	1	3	https://flagsapi.com/AR/flat/64.png\n	53	52	AR
+73	Georgia	GEO	3	3	1	7	https://flagsapi.com/GE/flat/64.png\n	24	28	GE
+111	Czechia	CZE	3	0	2	5	https://flagsapi.com/CZ/flat/64.png\n	28	25	CZ
+136	Denmark	DNK	2	2	5	9	https://flagsapi.com/DK/flat/64.png\n	29	14	DK
+50	Cuba	CUB	2	1	6	9	https://flagsapi.com/CU/flat/64.png\n	32	35	CU
+62	Israel	ISR	1	5	1	7	https://flagsapi.com/IL/flat/64.png\n	41	43	IL
+92	Kazakhstan	KAZ	1	3	3	7	https://flagsapi.com/KZ/flat/64.png\n	43	47	KZ
+194	Greece	GRC	1	1	6	8	https://flagsapi.com/GR/flat/64.png\n	52	54	GR
+17	India	IND	0	1	5	6	https://flagsapi.com/IN/flat/64.png\n	72	73	IN
+184	Botswana	BWA	1	1	0	2	https://flagsapi.com/BW/flat/64.png\n	56	45	BW
+76	Fiji	FJI	0	1	0	1	https://flagsapi.com/FJ/flat/64.png\n	75	65	FJ
+177	Ecuador	ECU	1	2	2	5	https://flagsapi.com/EC/flat/64.png\n	50	48	EC
+3	Jamaica	JAM	1	3	2	6	https://flagsapi.com/JM/flat/64.png\n	44	48	JM
 198	DR Congo	COD	0	0	0	0	https://flagsapi.com/CD/flat/64.png\n	\N	\N	CD
 132	Cook Islands	COK	0	0	0	0	https://flagsapi.com/CK/flat/64.png\n	\N	\N	CK
-47	Croatia	HRV	2	2	3	7	https://flagsapi.com/HR/flat/64.png\n	30	23	HR
-50	Cuba	CUB	2	1	6	9	https://flagsapi.com/CU/flat/64.png\n	32	39	CU
-111	Czechia	CZE	3	0	2	5	https://flagsapi.com/CZ/flat/64.png\n	28	38	CZ
-136	Denmark	DNK	2	2	5	9	https://flagsapi.com/DK/flat/64.png\n	29	15	DK
-177	Ecuador	ECU	1	2	2	5	https://flagsapi.com/EC/flat/64.png\n	50	53	EC
-74	Spain	ESP	5	4	9	18	https://flagsapi.com/ES/flat/64.png\n	15	9	ES
+53	Japan	JPN	20	12	13	45	https://flagsapi.com/JP/flat/64.png\n	3	9	JP
 140	Estonia	EST	0	0	0	0	https://flagsapi.com/EE/flat/64.png\n	\N	\N	EE
-76	Fiji	FJI	0	1	0	1	https://flagsapi.com/FJ/flat/64.png\n	76	28	FJ
+49	France	FRA	16	26	22	64	https://flagsapi.com/FR/flat/64.png\n	5	4	FR
 160	Finland	FIN	0	0	0	0	https://flagsapi.com/FI/flat/64.png\n	\N	\N	FI
-49	France	FRA	16	26	22	64	https://flagsapi.com/FR/flat/64.png\n	5	2	FR
-64	Great Britain	GBR	14	22	29	65	https://flagsapi.com/GB/flat/64.png\n	7	4	GB
-73	Georgia	GEO	3	3	1	7	https://flagsapi.com/GE/flat/64.png\n	24	44	GE
+64	Great Britain	GBR	14	22	29	65	https://flagsapi.com/GB/flat/64.png\n	7	5	GB
+71	Italy	ITA	12	13	15	40	https://flagsapi.com/IT/flat/64.png\n	9	8	IT
+55	Germany	DEU	12	13	8	33	https://flagsapi.com/DE/flat/64.png\n	10	11	DE
+122	Hungary	HUN	6	7	6	19	https://flagsapi.com/HU/flat/64.png\n	14	18	HU
 191	Equatorial Guinea	GNQ	0	0	0	0	https://flagsapi.com/GQ/flat/64.png\n	\N	\N	GQ
-55	Germany	DEU	12	13	8	33	https://flagsapi.com/DE/flat/64.png\n	10	7	DE
-194	Greece	GRC	1	1	6	8	https://flagsapi.com/GR/flat/64.png\n	52	36	GR
+74	Spain	ESP	5	4	9	18	https://flagsapi.com/ES/flat/64.png\n	15	6	ES
+41	Ireland	IRL	4	0	3	7	https://flagsapi.com/IE/flat/64.png\n	19	22	IE
+10	IR Iran	IRN	3	6	3	12	https://flagsapi.com/IR/flat/64.png\n	21	27	IR
 159	Haiti	HTI	0	0	0	0	https://flagsapi.com/HT/flat/64.png\n	\N	\N	HT
 173	Honduras	HND	0	0	0	0	https://flagsapi.com/HN/flat/64.png\n	\N	\N	HN
-122	Hungary	HUN	6	7	6	19	https://flagsapi.com/HU/flat/64.png\n	14	16	HU
-17	India	IND	0	1	5	6	https://flagsapi.com/IN/flat/64.png\n	72	21	IN
-10	IR Iran	IRN	3	6	3	12	https://flagsapi.com/IR/flat/64.png\n	21	30	IR
-41	Ireland	IRL	4	0	3	7	https://flagsapi.com/IE/flat/64.png\n	19	37	IE
 175	Iceland	ISL	0	0	0	0	https://flagsapi.com/IS/flat/64.png\n	\N	\N	IS
-62	Israel	ISR	1	5	1	7	https://flagsapi.com/IL/flat/64.png\n	41	32	IL
-71	Italy	ITA	12	13	15	40	https://flagsapi.com/IT/flat/64.png\n	9	8	IT
-3	Jamaica	JAM	1	3	2	6	https://flagsapi.com/JM/flat/64.png\n	45	52	JM
-53	Japan	JPN	20	12	13	45	https://flagsapi.com/JP/flat/64.png\n	3	10	JP
-92	Kazakhstan	KAZ	1	3	3	7	https://flagsapi.com/KZ/flat/64.png\n	43	41	KZ
 155	Saudi Arabia	SAU	0	0	0	0	https://flagsapi.com/SA/flat/64.png\n	\N	\N	SA
 192	Lao PDR	LAO	0	0	0	0	https://flagsapi.com/LA/flat/64.png\n	\N	\N	LA
 185	Latvia	LVA	0	0	0	0	https://flagsapi.com/LV/flat/64.png\n	\N	\N	LV
@@ -11776,91 +11776,91 @@ COPY public.countries (country_id, country_name, iso_alpha_3, gold, silver, bron
 104	Nigeria	NGA	0	0	0	0	https://flagsapi.com/NG/flat/64.png\n	\N	\N	NG
 95	Niger	NER	0	0	0	0	https://flagsapi.com/NE/flat/64.png\n	\N	\N	NE
 202	Nauru	NRU	0	0	0	0	https://flagsapi.com/NR/flat/64.png\n	\N	\N	NR
-81	Albania	ALB	0	0	2	2	https://flagsapi.com/AL/flat/64.png\n	84	77	AL
-1	Armenia	ARM	0	3	1	4	https://flagsapi.com/AM/flat/64.png\n	68	60	AM
-94	Chile	CHL	1	1	0	2	https://flagsapi.com/CL/flat/64.png\n	56	72	CL
-2	Colombia	COL	0	3	1	4	https://flagsapi.com/CO/flat/64.png\n	67	61	CO
-163	Dominica	DMA	1	0	0	1	https://flagsapi.com/DM/flat/64.png\n	64	80	DM
-157	Dominican Republic	DOM	1	0	2	3	https://flagsapi.com/DO/flat/64.png\n	60	68	DO
-107	Egypt	EGY	1	1	1	3	https://flagsapi.com/EG/flat/64.png\n	53	67	EG
-18	Ethiopia	ETH	1	3	0	4	https://flagsapi.com/ET/flat/64.png\n	48	59	ET
-87	Grenada	GRD	0	0	2	2	https://flagsapi.com/GD/flat/64.png\n	81	78	GD
-193	Guatemala	GTM	1	0	1	2	https://flagsapi.com/GT/flat/64.png\n	62	75	GT
-172	Hong Kong	HKG	2	0	2	4	https://flagsapi.com/HK/flat/64.png\n	38	57	HK
-134	Indonesia	IDN	2	0	1	3	https://flagsapi.com/ID/flat/64.png\n	39	64	ID
-118	Kyrgyzstan	KGZ	0	2	4	6	https://flagsapi.com/KG/flat/64.png\n	70	54	KG
+193	Guatemala	GTM	1	0	1	2	https://flagsapi.com/GT/flat/64.png\n	61	62	GT
+118	Kyrgyzstan	KGZ	0	2	4	6	https://flagsapi.com/KG/flat/64.png\n	69	72	KG
+172	Hong Kong	HKG	2	0	2	4	https://flagsapi.com/HK/flat/64.png\n	37	38	HK
+134	Indonesia	IDN	2	0	1	3	https://flagsapi.com/ID/flat/64.png\n	39	40	ID
+107	Egypt	EGY	1	1	1	3	https://flagsapi.com/EG/flat/64.png\n	53	55	EG
+94	Chile	CHL	1	1	0	2	https://flagsapi.com/CL/flat/64.png\n	56	57	CL
+163	Dominica	DMA	1	0	0	1	https://flagsapi.com/DM/flat/64.png\n	63	63	DM
+1	Armenia	ARM	0	3	1	4	https://flagsapi.com/AM/flat/64.png\n	67	69	AM
+2	Colombia	COL	0	3	1	4	https://flagsapi.com/CO/flat/64.png\n	67	69	CO
+87	Grenada	GRD	0	0	2	2	https://flagsapi.com/GD/flat/64.png\n	81	83	GD
+81	Albania	ALB	0	0	2	2	https://flagsapi.com/AL/flat/64.png\n	81	83	AL
+18	Ethiopia	ETH	1	3	0	4	https://flagsapi.com/ET/flat/64.png\n	48	51	ET
+157	Dominican Republic	DOM	1	0	2	3	https://flagsapi.com/DO/flat/64.png\n	60	61	DO
+142	New Zealand	NZL	10	7	3	20	https://flagsapi.com/NZ/flat/64.png\n	11	10	NZ
+135	Kenya	KEN	4	2	5	11	https://flagsapi.com/KE/flat/64.png\n	17	24	KE
+133	Norway	NOR	4	1	3	8	https://flagsapi.com/NO/flat/64.png\n	18	13	NO
+34	Romania	ROU	3	4	2	9	https://flagsapi.com/RO/flat/64.png\n	23	17	RO
+110	Poland	POL	1	4	5	10	https://flagsapi.com/PL/flat/64.png\n	42	42	PL
+170	Portugal	PRT	1	2	1	4	https://flagsapi.com/PT/flat/64.png\n	51	34	PT
+141	Lithuania	LTU	0	2	2	4	https://flagsapi.com/LT/flat/64.png\n	71	71	LT
+21	Puerto Rico	PRI	0	0	2	2	https://flagsapi.com/PR/flat/64.png\n	81	75	PR
+203	Philippines	PHL	2	0	2	4	https://flagsapi.com/PH/flat/64.png\n	37	38	PH
+23	Saint Lucia	LCA	1	1	0	2	https://flagsapi.com/LC/flat/64.png\n	56	57	LC
+108	Pakistan	PAK	1	0	0	1	https://flagsapi.com/PK/flat/64.png\n	63	63	PK
+205	DPR Korea	PRK	0	2	4	6	https://flagsapi.com/KP/flat/64.png\n	69	67	KP
+200	Panama	PAN	0	1	0	1	https://flagsapi.com/PA/flat/64.png\n	75	77	PA
+102	Qatar	QAT	0	0	1	1	https://flagsapi.com/QA/flat/64.png\n	85	85	QA
+100	Peru	PER	0	0	1	1	https://flagsapi.com/PE/flat/64.png\n	85	85	PE
+180	Netherlands	NLD	15	7	12	34	https://flagsapi.com/NL/flat/64.png\n	6	3	NL
+121	South Korea	KOR	13	9	10	32	https://flagsapi.com/KR/flat/64.png\n	8	12	KR
 51	Kuwait	KWT	0	0	0	0	https://flagsapi.com/KW/flat/64.png\n	\N	\N	KW
-23	Saint Lucia	LCA	1	1	0	2	https://flagsapi.com/LC/flat/64.png\n	59	74	LC
-141	Lithuania	LTU	0	2	2	4	https://flagsapi.com/LT/flat/64.png\n	71	48	LT
 22	US Virgin Islands	VIR	0	0	0	0	https://flagsapi.com/VG/flat/64.png\n	\N	\N	VG
-180	Netherlands	NLD	15	7	12	34	https://flagsapi.com/NL/flat/64.png\n	6	6	NL
-133	Norway	NOR	4	1	3	8	https://flagsapi.com/NO/flat/64.png\n	18	19	NO
-142	New Zealand	NZL	10	7	3	20	https://flagsapi.com/NZ/flat/64.png\n	11	14	NZ
 26	Oman	OMN	0	0	0	0	https://flagsapi.com/OM/flat/64.png\n	\N	\N	OM
-108	Pakistan	PAK	1	0	0	1	https://flagsapi.com/PK/flat/64.png\n	63	79	PK
-200	Panama	PAN	0	1	0	1	https://flagsapi.com/PA/flat/64.png\n	75	84	PA
 48	Paraguay	PRY	0	0	0	0	https://flagsapi.com/PY/flat/64.png\n	\N	\N	PY
-100	Peru	PER	0	0	1	1	https://flagsapi.com/PE/flat/64.png\n	87	88	PE
-203	Philippines	PHL	2	0	2	4	https://flagsapi.com/PH/flat/64.png\n	37	58	PH
 178	Palestine	PSE	0	0	0	0	https://flagsapi.com/PS/flat/64.png\n	\N	\N	PS
 117	Palau	PLW	0	0	0	0	https://flagsapi.com/PW/flat/64.png\n	\N	\N	PW
 174	Papua New Guinea	PNG	0	0	0	0	https://flagsapi.com/PG/flat/64.png\n	\N	\N	PG
-135	Kenya	KEN	4	2	5	11	https://flagsapi.com/KE/flat/64.png\n	17	31	KE
-121	South Korea	KOR	13	9	10	32	https://flagsapi.com/KR/flat/64.png\n	8	12	KR
-110	Poland	POL	1	4	5	10	https://flagsapi.com/PL/flat/64.png\n	42	18	PL
-170	Portugal	PRT	1	2	1	4	https://flagsapi.com/PT/flat/64.png\n	51	55	PT
-205	DPR Korea	PRK	0	2	4	6	https://flagsapi.com/KP/flat/64.png\n	69	43	KP
-21	Puerto Rico	PRI	0	0	2	2	https://flagsapi.com/PR/flat/64.png\n	82	69	PR
-102	Qatar	QAT	0	0	1	1	https://flagsapi.com/QA/flat/64.png\n	86	87	QA
-34	Romania	ROU	3	4	2	9	https://flagsapi.com/RO/flat/64.png\n	23	22	RO
-131	South Africa	ZAF	1	3	2	6	https://flagsapi.com/ZA/flat/64.png\n	44	20	ZA
 137	Rwanda	RWA	0	0	0	0	https://flagsapi.com/RW/flat/64.png\n	\N	\N	RW
 197	Samoa	WSM	0	0	0	0	https://flagsapi.com/WS/flat/64.png\n	\N	\N	WS
 101	Senegal	SEN	0	0	0	0	https://flagsapi.com/SN/flat/64.png\n	\N	\N	SN
 89	Seychelles	SYC	0	0	0	0	https://flagsapi.com/SC/flat/64.png\n	\N	\N	SC
-13	Singapore	SGP	0	0	1	1	https://flagsapi.com/SG/flat/64.png\n	85	86	SG
 19	St Kitts and Nevis	KNA	0	0	0	0	https://flagsapi.com/KN/flat/64.png\n	\N	\N	KN
 158	Sierra Leone	SLE	0	0	0	0	https://flagsapi.com/SL/flat/64.png\n	\N	\N	SL
-206	Slovenia	SVN	2	1	0	3	https://flagsapi.com/SI/flat/64.png\n	34	63	SI
 144	San Marino	SMR	0	0	0	0	https://flagsapi.com/SM/flat/64.png\n	\N	\N	SM
 128	Solomon Islands	SLB	0	0	0	0	https://flagsapi.com/SB/flat/64.png\n	\N	\N	SB
 151	Somalia	SOM	0	0	0	0	https://flagsapi.com/SO/flat/64.png\n	\N	\N	SO
-188	Serbia	SRB	3	1	1	5	https://flagsapi.com/RS/flat/64.png\n	27	17	RS
 179	Sri Lanka	LKA	0	0	0	0	https://flagsapi.com/LK/flat/64.png\n	\N	\N	LK
 201	South Sudan	SSD	0	0	0	0	https://flagsapi.com/SS/flat/64.png\n	\N	\N	SS
 46	Sao Tome & Principe	STP	0	0	0	0	https://flagsapi.com/ST/flat/64.png\n	\N	\N	ST
 130	Sudan	SDN	0	0	0	0	https://flagsapi.com/SD/flat/64.png\n	\N	\N	SD
-204	Switzerland	CHE	1	2	5	8	https://flagsapi.com/CH/flat/64.png\n	49	35	CH
 43	Suriname	SUR	0	0	0	0	https://flagsapi.com/SR/flat/64.png\n	\N	\N	SR
-125	Slovakia	SVK	0	0	1	1	https://flagsapi.com/SK/flat/64.png\n	92	85	SK
-66	Sweden	SWE	4	4	3	11	https://flagsapi.com/SE/flat/64.png\n	16	27	SE
 63	Eswatini	SWZ	0	0	0	0	https://flagsapi.com/SZ/flat/64.png\n	\N	\N	SZ
 199	Syria	SYR	0	0	0	0	https://flagsapi.com/SY/flat/64.png\n	\N	\N	SY
 139	Tanzania	TZA	0	0	0	0	https://flagsapi.com/TZ/flat/64.png\n	\N	\N	TZ
 186	Tonga	TON	0	0	0	0	https://flagsapi.com/TO/flat/64.png\n	\N	\N	TO
-129	Thailand	THA	1	3	2	6	https://flagsapi.com/TH/flat/64.png\n	46	51	TH
-45	Tajikistan	TJK	0	0	3	3	https://flagsapi.com/TJ/flat/64.png\n	80	71	TJ
 65	Turkmenistan	TKM	0	0	0	0	https://flagsapi.com/TM/flat/64.png\n	\N	\N	TM
 52	Timor-Leste	TLS	0	0	0	0	https://flagsapi.com/TL/flat/64.png\n	\N	\N	TL
 156	Togo	TGO	0	0	0	0	https://flagsapi.com/TG/flat/64.png\n	\N	\N	TG
-70	Chinese Taipei	TWN	2	0	5	7	https://flagsapi.com/TW/flat/64.png\n	35	40	TW
 162	Trinidad and Tobago	TTO	0	0	0	0	https://flagsapi.com/TT/flat/64.png\n	\N	\N	TT
-166	Tunisia	TUN	1	1	1	3	https://flagsapi.com/TN/flat/64.png\n	54	66	TN
-109	Turkey	TUR	0	3	5	8	https://flagsapi.com/TR/flat/64.png\n	65	33	TR
 150	Tuvalu	TUV	0	0	0	0	https://flagsapi.com/TV/flat/64.png\n	\N	\N	TV
 9	UA Emirates	ARE	0	0	0	0	https://flagsapi.com/AE/flat/64.png\n	\N	\N	AE
-79	Uganda	UGA	1	1	0	2	https://flagsapi.com/UG/flat/64.png\n	58	73	UG
-67	Ukraine	UKR	3	5	4	12	https://flagsapi.com/UA/flat/64.png\n	22	26	UA
 167	Uruguay	URY	0	0	0	0	https://flagsapi.com/UY/flat/64.png\n	\N	\N	UY
-164	United States	USA	40	44	42	126	https://flagsapi.com/US/flat/64.png\n	1	1	US
-37	Uzbekistan	UZB	8	2	3	13	https://flagsapi.com/UZ/flat/64.png\n	13	29	UZ
 56	Vanuatu	VUT	0	0	0	0	https://flagsapi.com/VU/flat/64.png\n	\N	\N	VU
 146	Venezuela	VEN	0	0	0	0	https://flagsapi.com/VE/flat/64.png\n	\N	\N	VE
 68	Vietnam	VNM	0	0	0	0	https://flagsapi.com/VN/flat/64.png\n	\N	\N	VN
 33	St Vincent & Grenadines	VCT	0	0	0	0	https://flagsapi.com/VC/flat/64.png\n	\N	\N	VC
 54	Yemen	YEM	0	0	0	0	https://flagsapi.com/YE/flat/64.png\n	\N	\N	YE
-153	Zambia	ZMB	0	0	1	1	https://flagsapi.com/ZM/flat/64.png\n	88	92	ZM
 119	Zimbabwe	ZWE	0	0	0	0	https://flagsapi.com/ZW/flat/64.png	\N	\N	ZW
+131	South Africa	ZAF	1	3	2	6	https://flagsapi.com/ZA/flat/64.png\n	44	44	ZA
+164	United States	USA	40	44	42	126	https://flagsapi.com/US/flat/64.png\n	1	1	US
+37	Uzbekistan	UZB	8	2	3	13	https://flagsapi.com/UZ/flat/64.png\n	13	19	UZ
+66	Sweden	SWE	4	4	3	11	https://flagsapi.com/SE/flat/64.png\n	16	21	SE
+67	Ukraine	UKR	3	5	4	12	https://flagsapi.com/UA/flat/64.png\n	22	20	UA
+188	Serbia	SRB	3	1	1	5	https://flagsapi.com/RS/flat/64.png\n	27	15	RS
+206	Slovenia	SVN	2	1	0	3	https://flagsapi.com/SI/flat/64.png\n	34	37	SI
+70	Chinese Taipei	TWN	2	0	5	7	https://flagsapi.com/TW/flat/64.png\n	35	31	TW
+204	Switzerland	CHE	1	2	5	8	https://flagsapi.com/CH/flat/64.png\n	49	53	CH
+109	Turkey	TUR	0	3	5	8	https://flagsapi.com/TR/flat/64.png\n	65	66	TR
+129	Thailand	THA	1	3	2	6	https://flagsapi.com/TH/flat/64.png\n	44	48	TH
+166	Tunisia	TUN	1	1	1	3	https://flagsapi.com/TN/flat/64.png\n	53	55	TN
+79	Uganda	UGA	1	1	0	2	https://flagsapi.com/UG/flat/64.png\n	56	57	UG
+45	Tajikistan	TJK	0	0	3	3	https://flagsapi.com/TJ/flat/64.png\n	80	81	TJ
+125	Slovakia	SVK	0	0	1	1	https://flagsapi.com/SK/flat/64.png\n	85	85	SK
+13	Singapore	SGP	0	0	1	1	https://flagsapi.com/SG/flat/64.png\n	85	85	SG
+153	Zambia	ZMB	0	0	1	1	https://flagsapi.com/ZM/flat/64.png\n	85	85	ZM
 \.
 
 
@@ -14889,7 +14889,7 @@ ALTER TABLE ONLY public.team_medals
     ADD CONSTRAINT fk_team FOREIGN KEY (team_id) REFERENCES public.teams(team_id);
 
 
--- Completed on 2024-08-21 09:29:04
+-- Completed on 2024-08-21 13:15:54
 
 --
 -- PostgreSQL database dump complete
