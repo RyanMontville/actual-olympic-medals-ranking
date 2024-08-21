@@ -10,7 +10,7 @@ The flags are from [flagapi.com](https://flagsapi.com/).
 You can find a .sql file of the database I created [here](https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/postgresql-db.sql). The database has 8 tables: 
 * actual_medal_totals which has the country ID, actual gold total, actual silver total, actual bronze total, and actual totals for the countries
 * athletes which has the athlete ID, name, name with last name first, gender, country ID and birth date for the athletes
-* countries which has the country ID, name, ISO alpha3 code, original gold total, original silver total, original bronze total, flag url, original rand and actual rank for the countries
+* countries which has the country ID, name, ISO alpha3 code, original gold total, original silver total, original bronze total, flag url, original rank, actual rank, and iso alpha2 code for the countries
 * events which has the event ID, event name, and sport ID for every event
 * individual_medals which has a medal ID, the date the medal was awarded, medal type, medal code, the country ID, the athlete ID, and the event ID for every medal awarded to an individual athlete. I generated the medal ID by combining the date, code, athlete ID, and event ID to make sure than the medals were not added into the database more than once.
 * sports which has the sport ID, 3 letter sport code, sport name, and the url to the sport on the Paris 2024 website for every sport
