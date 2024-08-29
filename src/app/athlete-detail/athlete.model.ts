@@ -1,7 +1,6 @@
 export class AthleteInfo {
     constructor(
         public athleteName: string,
-        public flagURL: string,
         public goldCount: number,
         public silverCount: number,
         public bronzeCount: number
