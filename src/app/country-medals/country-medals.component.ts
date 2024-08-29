@@ -3,19 +3,22 @@ import { CsvService } from '../csv.service';
 import { Medal } from './medal.model';
 import { Router } from '@angular/router';
 import { AthleteDetailComponent } from "../athlete-detail/athlete-detail.component";
+import { EventDetailComponent } from "../event-detail/event-detail.component";
 
 @Component({
   selector: 'app-country-medals',
   standalone: true,
-  imports: [AthleteDetailComponent],
+  imports: [AthleteDetailComponent, EventDetailComponent],
   templateUrl: './country-medals.component.html',
   styleUrl: './country-medals.component.css'
 })
 export class CountryMedalsComponent implements OnInit, OnDestroy{
   @Input() country: string = "";
   medalsForCountry: Medal[] = [];
-  shouldOpenPopup: boolean = false;
+  shouldOpenAthletePopup: boolean = false;
+  shouldOpenEventPopup: boolean = false;
   nameForPopup: string = "";
+  eventForPopup: number = 0;
   constructor(
     private csvService: CsvService,
     private router: Router) {}
@@ -48,13 +51,19 @@ export class CountryMedalsComponent implements OnInit, OnDestroy{
 
   shouldClosePopUp(outputBoolean: boolean) {
     if (outputBoolean === true) {
-      this.shouldOpenPopup = false;
+      this.shouldOpenAthletePopup = false;
+      this.shouldOpenEventPopup = false;
     }
   }
 
   showAthletePopUp(athleteName: string) {
     this.nameForPopup = athleteName;
-    this.shouldOpenPopup = true;
+    this.shouldOpenAthletePopup = true;
+  }
+
+  showEventPopUp(eventID: number) {
+    this.eventForPopup = eventID;
+    this.shouldOpenEventPopup = true;
   }
 
 }

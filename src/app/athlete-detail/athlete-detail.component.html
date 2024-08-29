@@ -1,11 +1,17 @@
-<div id="athlete-header">
-    <p>{{athleteInfo.athleteName}}</p>
-    <p>🥇: {{athleteInfo.goldCount}}</p>
-    <p>🥈: {{athleteInfo.silverCount}}</p>
-    <p>🥉: {{athleteInfo.bronzeCount}}</p>
-    <span class="material-symbols-outlined close-button" (click)="OnClose()">close</span>
-</div>
+@if (loading) {
+    <p>Loading</p>
+}
 
-@for (medal of medalsForAthlete; track medal) {
-    <p>{{medal.medalDate}} - {{medal.eventName}} - {{medal.medalEmoji}}</p>
+@if (!loading) {
+    <div id="athlete-header">
+        <p>Medals for {{athleteInfo.athleteName}}</p>
+        <p>🥇: {{athleteInfo.goldCount}}</p>
+        <p>🥈: {{athleteInfo.silverCount}}</p>
+        <p>🥉: {{athleteInfo.bronzeCount}}</p>
+        <span class="material-symbols-outlined close-button" (click)="OnClose()">close</span>
+    </div>
+    
+    @for (medal of medalsForAthlete; track medal) {
+        <p>{{medal.medalDate}} - {{medal.eventName}} - {{medal.medalEmoji}}</p>
+    }
 }

@@ -1,0 +1,19 @@
+@if (loading) {
+    <p>Loading...</p>
+}
+
+@if (!loading) {
+    <div id="event-header">
+        <p>Medals for {{eventName}}</p>
+        <span class="material-symbols-outlined close-button" (click)="OnClose()">close</span>
+    </div>
+    @for (country of goldCountries; track country) {
+        <p>{{country.country}} {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
+    }
+    @for (country of silverCountries; track country) {
+        <p>{{country.country}} {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
+    }
+    @for (country of bronzeCountries; track country) {
+        <p>{{country.country}} {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
+    }
+}

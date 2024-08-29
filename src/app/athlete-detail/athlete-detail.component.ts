@@ -14,6 +14,7 @@ export class AthleteDetailComponent implements OnInit {
   medalsForAthlete: Medal[] = [];
   athleteInfo: AthleteInfo = new AthleteInfo("", 0, 0, 0);
   closePopup = output<boolean>();
+  loading: boolean = true;
 
   constructor(private csvService: CsvService) {}
 
@@ -38,6 +39,7 @@ export class AthleteDetailComponent implements OnInit {
           this.medalsForAthlete.push(athlete);
         }
       });
+      this.loading = false;
     });
   }
 
