@@ -1,8 +1,10 @@
 table {
     width: 100%;
+    position: relative;
 }
 td {
     padding: 0 10px;
+    position: relative;
 }
 
 .align-right {
@@ -10,4 +12,26 @@ td {
 }
 .align-center {
     text-align: center;
+}
+#popup-wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup {
+    z-index: 3;
+    background-color: var(--main-background-color);
+    border: 1px solid #E3E3E3;
+    padding: 20px;
+}
+
+.link {
+    color: var(--link-color);
+    text-decoration: underline;
+    cursor: pointer;
 }

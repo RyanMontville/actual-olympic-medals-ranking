@@ -1,0 +1,12 @@
+#athlete-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
