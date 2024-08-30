@@ -12,7 +12,7 @@ import { AthleteInfo, Medal } from './athlete.model';
 export class AthleteDetailComponent implements OnInit {
   @Input() athleteName = "";
   medalsForAthlete: Medal[] = [];
-  athleteInfo: AthleteInfo = new AthleteInfo("", 0, 0, 0);
+  athleteInfo: AthleteInfo = new AthleteInfo("", "", "", 0, 0, 0);
   closePopup = output<boolean>();
   loading: boolean = true;
 
@@ -24,7 +24,7 @@ export class AthleteDetailComponent implements OnInit {
       list.forEach(line => {
         let cols = line.split(',');
         if (cols[0] === this.athleteName) {
-          this.athleteInfo = new AthleteInfo(cols[0], +cols[1], +cols[2], +cols[3]);
+          this.athleteInfo = new AthleteInfo(cols[0], cols[1], cols[2], +cols[3], +cols[4], +cols[5]);
         }
       });
     })

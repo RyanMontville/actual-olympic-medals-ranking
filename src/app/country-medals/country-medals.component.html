@@ -8,7 +8,7 @@
             @if(!isAthlete(medal.medalistName)) {
                 <td>{{medal.medalistName}}</td>
             }
-            <td (click)="showEventPopUp(medal.eventID)" class="link">{{medal.event}}</td>
+            <td>{{medal.sport}} - <span (click)="showEventPopUp(medal.eventID)" class="link">{{medal.event}}</span></td>
             <td class="align-center">{{medal.medalCode}}{{medal.numAthletes}}</td>
         </tr>
     }

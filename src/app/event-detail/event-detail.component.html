@@ -8,12 +8,12 @@
         <span class="material-symbols-outlined close-button" (click)="OnClose()">close</span>
     </div>
     @for (country of goldCountries; track country) {
-        <p>{{country.country}} {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
+        <p>{{country.country}} - {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
     }
     @for (country of silverCountries; track country) {
-        <p>{{country.country}} {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
+        <p>{{country.country}} - {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
     }
     @for (country of bronzeCountries; track country) {
-        <p>{{country.country}} {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
+        <p>{{country.country}} - {{country.medalistName}} {{country.medalCode}} {{country.numAthletes}}</p>
     }
 }

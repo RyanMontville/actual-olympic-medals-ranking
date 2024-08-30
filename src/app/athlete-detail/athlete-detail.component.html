@@ -4,6 +4,7 @@
 
 @if (!loading) {
     <div id="athlete-header">
+        <img [src]="athleteInfo.flagUrl" [alt]="athleteInfo.country" />
         <p>Medals for {{athleteInfo.athleteName}}</p>
         <p>🥇: {{athleteInfo.goldCount}}</p>
         <p>🥈: {{athleteInfo.silverCount}}</p>

@@ -29,8 +29,10 @@ export class CountryMedalsComponent implements OnInit, OnDestroy{
       list.forEach(line =>{
         let cols = line.split(",");
         let medalEmoji = cols[5].replace("1", "🥇").replace("2", "🥈").replace("3", "🥉")
-        //medal = date, country, name, sport-event,eventID,medalEmoji,multiplyer
-        let medal = new Medal(cols[0], cols[1], cols[2], cols[3], +cols[4], medalEmoji, cols[6]);
+        let eventParts = cols[3].split(" - ");
+        let sport = eventParts[0];
+        let eventName = eventParts[1];
+        let medal = new Medal(cols[0], cols[1], cols[2], cols[3], sport, eventName, +cols[4], medalEmoji, cols[6]);
         if (medal.country === this.country) {
           this.medalsForCountry.push(medal);
         }
