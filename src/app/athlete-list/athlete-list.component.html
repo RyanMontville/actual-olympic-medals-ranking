@@ -1,0 +1,33 @@
+<app-header />
+<main>
+<p>Sanjay Amirthraj created a website to ranked all of the countries not by the total number of medals, but by the total value of the medals. You can check out his website <a href="https://olympics-better-rankings.vercel.app/" target="_blank">here</a>. Then Hank green <a href="https://x.com/hankgreen/status/1824509431352266788" target="_blank">retweeted</a> his website. In the comments of Hank's post, several people suggested ranking the countries by total medals earned including athletes on teams, so a relay team of 4 would be counted as 4 medals instead of 1. After spending the weekend finding a dataset that was more than just the total medal counts and building a database, I have created the ACTUAL olympic rankings.</p>
+<table>
+    @if (loading) {
+        <h2>Loading...</h2>
+    }
+    @if (!loading) {
+        <tr>
+            <th class="align-left">Name</th>
+            <th class="align-left">Country</th>
+            <th class="align-right">Gold</th>
+            <th class="align-right">Silver</th>
+            <th class="align-right">Bronze</th>
+        </tr>
+        @for (athlete of athletes; track athlete) {
+            <tr>
+                <td (click)="showAthletePopUp(athlete.athleteName)" class="link">{{athlete.athleteName}}</td>
+                <td class="country-and-flag"> <img [src]="athlete.flagUrl" [alt]="athlete.country" class="flag-64" /><span class="desktop"> {{athlete.country}}</span></td>
+                <td class="align-right">{{athlete.goldCount}}</td>
+                <td class="align-right">{{athlete.silverCount}}</td>
+                <td class="align-right">{{athlete.bronzeCount}}</td>
+            </tr>
+        }
+    }
+</table>
+@if (shouldOpenAthletePopup) {
+    <div id="popup-wrapper">
+        <app-athlete-detail [athleteName]="nameForPopup" class="popup" (closePopup)="shouldClosePopUp($event)"/>
+    </div>
+}
+</main>
+<app-footer />
