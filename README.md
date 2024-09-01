@@ -7,7 +7,7 @@ I found a [dataset on Kaggle](https://www.kaggle.com/datasets/piterfm/paris-2024
 
 The flags are from [flagapi.com](https://flagsapi.com/).
 
-You can find a .sql file of the database I created [here](https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/postgresql-db.sql). The database has 8 tables: 
+You can find a .sql file of the database I created [here](https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/data/postgresql-db.sql). The database has 8 tables: 
 * actual_medal_totals which has the country ID, actual gold total, actual silver total, actual bronze total, and actual totals for the countries
 * athlete_team which links athlete_id to team_id
 * athletes which has the athlete ID, name, name with last name first, gender, country ID, birth date, and the gold/silver/brpnze medals for the athletes
