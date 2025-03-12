@@ -1,3 +1,5 @@
+# Data for Actual Olympic Medals Ranking
+## CSV files
 The Angular app uses 5 csv files to load the data:
 * [actul_totals.csv](https://github.com/RyanMontville/actual-olympic-medals-ranking/blob/main/actual_totals.csv) which has the columns country name, flag url, actual gold total, actual silver total, actual bronze total, actual medal total, original ranking, actual ranking
 * [athlete_medals.csv](https://github.com/RyanMontville/actual-olympic-medals-ranking/blob/main/data/athlete_medals.csv) which has the columns athlete name, country, flag url, gold medals won, silver medals won, bronze medals won 
@@ -5,6 +7,7 @@ The Angular app uses 5 csv files to load the data:
 * [team_and_individual_medals.csv](https://github.com/RyanMontville/actual-olympic-medals-ranking/blob/main/data/team_and_individual_medals.csv) which has the columns date awarded, country, athlete name/team name, event, medal code (1-gold, 2-silver, 3-bronze), the number of athletes to multiply by, the team ID
 * [team_members.csv](https://github.com/RyanMontville/actual-olympic-medals-ranking/blob/main/data/team_members.csv) which has the columns team ID, athlete name
 
+## SQL file
 The [.sql databse export file]((https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/data/postgresql-db.sql)) includes 8 tables:
 * actual_medal_totals which has the country ID, actual gold total, actual silver total, actual bronze total, and actual totals for the countries
 * athlete_team which links athlete_id to team_id
