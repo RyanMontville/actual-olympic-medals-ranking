@@ -8,6 +8,7 @@ export class Medal {
         public event: string,
         public eventID: number,
         public medalCode: string,
-        public numAthletes: string) {
+        public numAthletes: string,
+        public teamId: number) {
     }
 }

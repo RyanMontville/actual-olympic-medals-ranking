@@ -20,4 +20,7 @@ export class CsvService {
   getMedalsForEveryAthlete() {
     return this.http.get('https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/data/medals_for_every_athlete.csv', { responseType: 'text' });
   }
+  getAllTeamMembers() {
+    return 0;
+  }
 }

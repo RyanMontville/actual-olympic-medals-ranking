@@ -4,11 +4,12 @@ import { Medal } from './medal.model';
 import { Router } from '@angular/router';
 import { AthleteDetailComponent } from "../athlete-detail/athlete-detail.component";
 import { EventDetailComponent } from "../event-detail/event-detail.component";
+import { TeamMembersComponent } from "../team-members/team-members.component";
 
 @Component({
   selector: 'app-country-medals',
   standalone: true,
-  imports: [AthleteDetailComponent, EventDetailComponent],
+  imports: [AthleteDetailComponent, EventDetailComponent, TeamMembersComponent],
   templateUrl: './country-medals.component.html',
   styleUrl: './country-medals.component.css'
 })
@@ -17,8 +18,10 @@ export class CountryMedalsComponent implements OnInit, OnDestroy{
   medalsForCountry: Medal[] = [];
   shouldOpenAthletePopup: boolean = false;
   shouldOpenEventPopup: boolean = false;
+  shouldTeamMembersPopup: boolean = false;
   nameForPopup: string = "";
   eventForPopup: number = 0;
+  detailsForTeamPopUp: Medal = new Medal("","","","","","",0,"","",0);
   constructor(
     private csvService: CsvService,
     private router: Router) {}
@@ -32,7 +35,7 @@ export class CountryMedalsComponent implements OnInit, OnDestroy{
         let eventParts = cols[3].split(" - ");
         let sport = eventParts[0];
         let eventName = eventParts[1];
-        let medal = new Medal(cols[0], cols[1], cols[2], cols[3], sport, eventName, +cols[4], medalEmoji, cols[6]);
+        let medal = new Medal(cols[0], cols[1], cols[2], cols[3], sport, eventName, +cols[4], medalEmoji, cols[6], +cols[7]);
         if (medal.country === this.country) {
           this.medalsForCountry.push(medal);
         }
@@ -66,6 +69,9 @@ export class CountryMedalsComponent implements OnInit, OnDestroy{
   showEventPopUp(eventID: number) {
     this.eventForPopup = eventID;
     this.shouldOpenEventPopup = true;
+  }
+  showTeamMembersPopUp(details: Medal) {
+    this.detailsForTeamPopUp = details;
   }
 
 }

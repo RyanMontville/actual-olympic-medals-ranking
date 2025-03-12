@@ -6,7 +6,7 @@
                 <td (click)="showAthletePopUp(medal.medalistName)" class="link">{{medal.medalistName}}</td>
             }
             @if(!isAthlete(medal.medalistName)) {
-                <td>{{medal.medalistName}}</td>
+                <td (click)="showTeamMembersPopUp(medal)" class="link">{{medal.medalistName}}</td>
             }
             <td>{{medal.sport}} - <span (click)="showEventPopUp(medal.eventID)" class="link">{{medal.event}}</span></td>
             <td class="align-center">{{medal.medalCode}}{{medal.numAthletes}}</td>
@@ -21,6 +21,12 @@
     @if (shouldOpenEventPopup) {
         <div id="popup-wrapper">
             <app-event-detail [eventID]="eventForPopup" class="popup" (closePopup)="shouldClosePopUp($event)"/>
+        </div>
+    }
+
+    @if (shouldTeamMembersPopup) {
+        <div id="popup-wrapper">
+            <app-team-members [details]="detailsForTeamPopUp" class="popup" (closePopup)="shouldClosePopUp($event)"/>
         </div>
     }
 </table>
