@@ -58,6 +58,7 @@ export class CountryMedalsComponent implements OnInit, OnDestroy{
     if (outputBoolean === true) {
       this.shouldOpenAthletePopup = false;
       this.shouldOpenEventPopup = false;
+      this.shouldTeamMembersPopup = false;
     }
   }
 
@@ -72,6 +73,7 @@ export class CountryMedalsComponent implements OnInit, OnDestroy{
   }
   showTeamMembersPopUp(details: Medal) {
     this.detailsForTeamPopUp = details;
+    this.shouldTeamMembersPopup = true;
   }
 
 }

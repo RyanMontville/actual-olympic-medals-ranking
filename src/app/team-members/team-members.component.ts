@@ -40,6 +40,6 @@ export class TeamMembersComponent implements OnInit {
 
   getTeamName() {
     let teamNameParts: string[] = this.details.medalistName.split(" ");
-    return this.details.country + teamNameParts[0] + this.details.sport + "team";
+    return this.details.country + " " + teamNameParts[0] + " " + this.details.sport + " team";
   }
 }

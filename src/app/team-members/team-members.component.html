@@ -5,6 +5,7 @@
 @if (!loading) {
     <div id="team-header">
         <p>Medals for {{getTeamName()}}</p>
+        <span class="material-symbols-outlined close-button" (click)="OnClose()">close</span>
     </div>
     @for (member of teamMembers; track member) {
         <p>{{details.medalDate}} - {{member}} - {{details.event}} - {{medal}}</p>
