@@ -34,7 +34,7 @@ export class AthleteDetailComponent implements OnInit {
         let cols = line.split(",");
         //date,name,event,event_id,medal
         if (cols[1] === this.athleteName) {
-          let emojiMedal = cols[4].replace("1", "🥇").replace("2", "🥈").replace("3", "🥉")
+          let emojiMedal = cols[4].replace("1", "🥇").replace("2", "🥈").replace("3", "🥉");
           let athlete = new Medal(cols[0], cols[1], cols[2], +cols[3], emojiMedal);
           this.medalsForAthlete.push(athlete);
         }

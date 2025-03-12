@@ -21,6 +21,6 @@ export class CsvService {
     return this.http.get('https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/data/medals_for_every_athlete.csv', { responseType: 'text' });
   }
   getAllTeamMembers() {
-    return 0;
+    return this.http.get('https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/refs/heads/main/data/team_members.csv', { responseType: 'text' });
   }
 }

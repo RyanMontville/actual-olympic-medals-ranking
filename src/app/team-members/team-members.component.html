@@ -1,1 +1,12 @@
-<p>team-members works!</p>
+@if (loading) {
+    <p>Loading</p>
+}
+
+@if (!loading) {
+    <div id="team-header">
+        <p>Medals for {{getTeamName()}}</p>
+    </div>
+    @for (member of teamMembers; track member) {
+        <p>{{details.medalDate}} - {{member}} - {{details.event}} - {{medal}}</p>
+    }
+}

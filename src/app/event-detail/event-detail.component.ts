@@ -33,7 +33,7 @@ export class EventDetailComponent implements OnInit {
           let eventParts = cols[3].split(" - ");
         let sport = eventParts[0];
         let eventName = eventParts[1];
-          let medal = new Medal(cols[0], cols[1], cols[2], cols[3], sport, eventName, +cols[4], medalEmoji, cols[6]);
+          let medal = new Medal(cols[0], cols[1], cols[2], cols[3], sport, eventName, +cols[4], medalEmoji, cols[6], +cols[7]);
           if (this.eventName === "") {
             this.eventName = medal.fullEventName;
           }
