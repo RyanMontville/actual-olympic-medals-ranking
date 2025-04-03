@@ -18,3 +18,65 @@ The [.sql databse export file]((https://raw.githubusercontent.com/RyanMontville/
 * sports which has the sport ID, 3 letter sport code, sport name, and the url to the sport on the Paris 2024 website for every sport
 * team_medals which has a medal ID, the date the medal was awarded, medal type, medal code, the country ID, the team ID, and the event Id for every medal awarded to a team. I generated the medal ID similarly to how I generated the ID for the individual_medals table. This table only has one medal per team, the total counting each athlete on the team in calculated separately.
 * teams which has the team ID included in the dataset I found, team name, team gender, the country ID, the sport ID, the event ID, the number of athletes on the team, and the number of coaches on the team. I generated the team name by combining the country ISO code, sport code, gender, and event ID.
+
+## Some examples of queries used to get the medal counts
+```
+--Get every athlete that won a medal as part of a team, along with their country, sport, event, and medal
+SELECT athlete_name, country_name, (sport_name || ' - '|| event_name) as sport_event, medal_type
+FROM public.athlete_team 
+JOIN athletes on athletes.athlete_id = athlete_team.athlete_id
+JOIN teams on teams.team_id = athlete_team.team_id
+JOIN sports on sports.sport_id = teams.sport_id
+JOIN countries on countries.country_id = teams.country_id
+JOIN events on events.event_id = teams.event_id
+JOIN team_medals on team_medals.team_id = teams.team_id
+ORDER BY country_name, teams.team_id, athlete_name
+
+--Get all the athletes on a team
+SELECT athlete_name, country_name, sport_name, event_name
+FROM public.athlete_team
+JOIN teams on teams.team_id = athlete_team.team_id
+JOIN athletes on athletes.athlete_id = athlete_team.athlete_id
+JOIN countries on countries.country_id = teams.country_id
+JOIN sports on sports.sport_id = teams.sport_id
+JOIN events on events.event_id = teams.event_id
+WHERE athlete_team.team_id = <team ID>
+
+--Get all medals won by an athlete, both individually and as part of a team
+SELECT athlete_name, sport_name, event_name, medal_type
+FROM
+(
+	SELECT athlete_name, sport_name, event_name, medal_type
+	FROM public.athletes
+	JOIN individual_medals on individual_medals.athlete_id = athletes.athlete_id
+	JOIN events on events.event_id =  individual_medals.event_id
+	JOIN sports on sports.sport_id = events.sport_id
+	WHERE athlete_name = 'Chloe DYGERT'
+	UNION ALL
+	SELECT athlete_name, sport_name, event_name, medal_type
+	FROM public.athletes
+	JOIN athlete_team on athlete_team.athlete_id = athletes.athlete_id
+	JOIN team_medals on team_medals.team_id = athlete_team.team_id
+	JOIN events on events.event_id =  team_medals.event_id
+	JOIN sports on sports.sport_id = events.sport_id
+	WHERE athlete_name = <athlete name>
+)
+
+--Get the total numer of medals won by country, counting each team meber instead of the team as 1 medal. (My app still ranks the countries by gold, the silver, then bronze, not by total medals.)
+SELECT  country_name, SUM(total_medals)
+FROM
+( 
+	SELECT country_name, COUNT(*) as total_medals
+	FROM public.individual_medals
+	JOIN countries on countries.country_id = individual_medals.country_id
+	GROUP BY country_name
+	UNION ALL
+	SELECT country_name, SUM(num_athletes) as total_medals
+	FROM public.teams
+	JOIN countries on countries.country_id = teams.country_id
+	JOIN team_medals on team_medals.team_id = teams.team_id
+	GROUP BY country_name
+)
+GROUP BY country_name
+ORDER BY SUM(total_medals) DESC
+
