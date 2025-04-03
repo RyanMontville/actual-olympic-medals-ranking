@@ -9,15 +9,18 @@ The Angular app uses 5 csv files to load the data:
 
 ## SQL file
 The [.sql databse export file]((https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/data/postgresql-db.sql)) includes 8 tables:
-* actual_medal_totals which has the country ID, actual gold total, actual silver total, actual bronze total, and actual totals for the countries
-* athlete_team which links athlete_id to team_id
-* athletes which has the athlete ID, name, name with last name first, gender, country ID, birth date, and the gold/silver/brpnze medals for the athletes
-* countries which has the country ID, name, ISO alpha3 code, original gold total, original silver total, original bronze total, flag url, original rank, actual rank, and iso alpha2 code for the countries
-* events which has the event ID, event name, and sport ID for every event
-* individual_medals which has a medal ID, the date the medal was awarded, medal type, medal code, the country ID, the athlete ID, and the event ID for every medal awarded to an individual athlete. I generated the medal ID by combining the date, code, athlete ID, and event ID to make sure than the medals were not added into the database more than once.
-* sports which has the sport ID, 3 letter sport code, sport name, and the url to the sport on the Paris 2024 website for every sport
-* team_medals which has a medal ID, the date the medal was awarded, medal type, medal code, the country ID, the team ID, and the event Id for every medal awarded to a team. I generated the medal ID similarly to how I generated the ID for the individual_medals table. This table only has one medal per team, the total counting each athlete on the team in calculated separately.
-* teams which has the team ID included in the dataset I found, team name, team gender, the country ID, the sport ID, the event ID, the number of athletes on the team, and the number of coaches on the team. I generated the team name by combining the country ISO code, sport code, gender, and event ID.
+* actual_medal_totals (country_id, gold, silver, bronze, real_total) FK country_id references countries
+* athlete_team (athlete_id, team_id) FK athlete_id references athletes FK team_id references teams
+* athletes (athlete_id, athlete_name, last_name_first, gender, country_id, birth_date, gold, silver, bronze) PK athlete_id FK country_id
+* countries (country_id, country_name, iso_alpha_3, gold, silver, bronze, medal_total, flag_url, original_rank, actual_rank, iso_alpha_2) PK country_id
+* events (event_id, event_name, sport_id) PK event_id FK sport_id references events
+* individual_medals (medal_id, medal_date, medal_type, medal_code, country_id, athlete_id, event_id) PK medal_id FK country_id references countries FK athlete_id references athletes FK event_id references events
+  * The medal_id is created by combining the date, code, athlete ID, and event ID to make sure than the medals were not added into the database more than once.
+* sports (sport_id, sport_code, sport_name, sport_url) PK sport_id
+* team_medals (medal_id, medal_date, medal_type, medal_code, country_id, team_id, event_id) PK medal_id FK country_id references countries FK team_id references teams FK event_id references events
+  * The medal_id is created similarly to how the ID for the individual_medals table. This table only has one medal per team, the total counting each athlete on the team in calculated separately.
+* teams (team_id, team_name, team_gender, country_id, sport_id, event_id, num_athletes, num_coaches) PK team_id FK country_id references countries FK sport_id references sports FK event_id references events
+  * The team name is created by combining the country ISO code, sport code, gender, and event ID.
 
 ## Some examples of queries used to get the medal counts
 ```
