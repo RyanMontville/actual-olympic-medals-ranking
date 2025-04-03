@@ -11,7 +11,7 @@ The Angular app uses 5 csv files to load the data:
 The [.sql databse export file]((https://raw.githubusercontent.com/RyanMontville/actual-olympic-medals-ranking/main/data/postgresql-db.sql)) includes 8 tables:
 * actual_medal_totals (country_id, gold, silver, bronze, real_total) FK country_id references countries
 * athlete_team (athlete_id, team_id) FK athlete_id references athletes FK team_id references teams
-* athletes (athlete_id, athlete_name, last_name_first, gender, country_id, birth_date, gold, silver, bronze) PK athlete_id FK country_id
+* athletes (athlete_id, athlete_name, last_name_first, gender, country_id, birth_date, gold, silver, bronze) PK athlete_id FK country_id references countries
 * countries (country_id, country_name, iso_alpha_3, gold, silver, bronze, medal_total, flag_url, original_rank, actual_rank, iso_alpha_2) PK country_id
 * events (event_id, event_name, sport_id) PK event_id FK sport_id references events
 * individual_medals (medal_id, medal_date, medal_type, medal_code, country_id, athlete_id, event_id) PK medal_id FK country_id references countries FK athlete_id references athletes FK event_id references events
