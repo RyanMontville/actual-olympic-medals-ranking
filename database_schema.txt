@@ -1,0 +1,11 @@
+countries (country_id, country_name, iso_alpha_3, iso_alpha_2, gold, silver, bronze, medal_total, original_rank, actual_rank, flag_url)
+actual_medal_totals (country_id, actual_gold, actual_silver, actual_bronze, actual_total)
+athletes (athlete_id, athlete_name, gender, country_id, birth_date, gold, silver, bronze)
+sports (sport_id, sport_code, sport_name, sport_url)
+events (event_id, sport_id, event_name)
+teams (team_id, team_name, team_gender, country_id, sport_id, event_id, num_athletes)
+athlete_team (athlete_id, team_id INTEGER)
+team_medals (medal_id, medal_date, medal_type, medal_code, country_id, team_id, event_id)
+individual_medals (medal_id, medal_date, medal_type, medal_code, country_id, athlete_id, event_id)
+
+Total of all CSVs in repo = 321KB
